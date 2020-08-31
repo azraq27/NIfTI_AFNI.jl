@@ -5,4 +5,4 @@ version = "0.1.0"
 
 [deps]
 LightXML = "9c8b4983-aa76-5018-a973-4c85ecc9e179"
-NIfTI = "a3a9e032-41b5-5fc4-967a-a6b7a19844d3"
+NIfTI = "240bb832-a364-11e8-2ada-8ff1657fc514"
