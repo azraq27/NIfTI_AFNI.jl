@@ -48,7 +48,7 @@ function AFNIExtension(e::NIfTI.NIfTI1Extension)
     isafni(e) || error("Trying to convert an unknown NIfTIExtension to AFNIExtension")
     
     edata = copy(e.edata)
-    raw_xml = String(e.edata)
+    raw_xml = String(edata)
 
     xdoc = parse_string(raw_xml)
     xroot = root(xdoc)
@@ -73,7 +73,7 @@ function AFNIExtension(e::NIfTI.NIfTI1Extension)
     end
     
     free(xdoc)
-    AFNIExtension(e.ecode,edata,raw_xml,header_dict)
+    AFNIExtension(e.ecode,e.edata,raw_xml,header_dict)
 end
 
 NIfTI1Extension(a::AFNIExtension) = NIfTI.NIfTI1Extension(a.ecode,a.edata)
