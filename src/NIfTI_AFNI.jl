@@ -68,7 +68,10 @@ function AFNIExtension(e::NIfTI.NIfTI1Extension)
         end
 
         isa(header_dict[n],AbstractArray) && length(header_dict[n])==1 && (header_dict[n] = header_dict[n][1])
-        n == "BRICK_LABS" && (header_dict[n] = split(header_dict[n],"~"))
+        if n == "BRICK_LABS"
+            isa(header_dict[n],AbstractArray) && (header_dict[n] = join(header_dict[n]))
+            header_dict[n] = split(header_dict[n],"~")
+        end
         n == "BRICK_STATSYM" && (header_dict[n] = split(header_dict[n],";"))
     end
     
