@@ -1,3 +1,6 @@
+# Decided to take another shot at building a full AFNI.jl implementation, so I've merged this into my AFNI.jl repo.
+
+
 Take a NIfTI extension object and parse the AFNI header extensions.
 
 Usage:
